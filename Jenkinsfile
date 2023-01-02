@@ -35,10 +35,10 @@ pipeline {
           
             steps {
         withDockerRegistry([ credentialsId: "docker", url: "" ]) {
-          sh  'sudo docker push nikhilnidhi/samplewebapp:latest'
+          sh  'sudo docker push vvsatyagupta/samplewebapp:latest'
         //  sh  'docker push nikhilnidhi/samplewebapp:$BUILD_NUMBER' 
         }
-                  
+                 
           }
         }
      
