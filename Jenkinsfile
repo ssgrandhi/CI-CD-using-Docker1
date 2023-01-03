@@ -53,8 +53,8 @@ pipeline {
  stage('Run Docker container on remote hosts') {
              
             steps {
-	       //sshagent(['clientserver']) {
-               //sh 'ssh -o StrictHostKeyChecking=no -l ec2-user 172.31.84.29 uname -a'
+	       sshagent(['clientserver']) {
+               sh 'ssh -o StrictHostKeyChecking=no -l ec2-user 172.31.84.29 uname -a'
                 sh "sudo docker -H ssh://ec2-user@172.31.82.171 run -d -p 8004:8080 vvsatyagupta/samplewebapp"
  
             }
